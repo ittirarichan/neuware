@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd neuware_portfilio && npm run build",
-  "outputDirectory": "neuware_portfilio/dist",
-  "installCommand": "cd neuware_portfilio && npm install"
-}
