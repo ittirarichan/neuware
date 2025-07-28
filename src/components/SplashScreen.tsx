@@ -57,7 +57,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
               <img 
                 src={logo} 
                 alt="NeuWare" 
-                className="w-20 h-20"
+                className="w-20 h-24 "
               />
             </motion.div>
 
