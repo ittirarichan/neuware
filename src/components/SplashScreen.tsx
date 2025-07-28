@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Smartphone, Globe, Palette, Zap, Sparkles } from 'lucide-react';
+import logo from "@/assets/logo.png";
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -124,7 +125,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
                 />
                 <div className="absolute inset-2 rounded-full bg-background flex items-center justify-center">
                   <img 
-                    src="/src/assets/logo.png" 
+                    src={logo} 
                     alt="NeuWare" 
                     className="w-8 h-8"
                   />
@@ -361,5 +362,6 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 };
 
 export default SplashScreen;
+
 
 

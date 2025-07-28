@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,7 @@ const Navigation = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/logo.png" 
+                src={logo} 
                 alt="NeuWare Logo" 
                 className="h-7 sm:h-8 w-auto"
               />
