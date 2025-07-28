@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-white">NeuWare</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Empowering businesses through innovative digital solutions and creative excellence.
+              A passionate startup building innovative digital solutions for tomorrow's challenges.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary tech-transition">

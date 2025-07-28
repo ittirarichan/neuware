@@ -19,36 +19,18 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 fade-in-left">
-            {/* Logo/Brand */}
-            <div className="flex items-center space-x-3 fade-in-scale stagger-1">
-              <div className="w-10 h-10 tech-gradient rounded-lg flex items-center justify-center glow-pulse">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-foreground">NeuWare</span>
-            </div>
-
-            {/* Experience Badge */}
-            <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full magnetic stagger-2">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-4 h-4 text-primary fill-current stagger-${i + 1}`} />
-                ))}
-              </div>
-              <span className="text-sm font-medium text-primary">1+ Year Experience</span>
-            </div>
-
             {/* Main Heading */}
             <div className="space-y-4 stagger-3">
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight fade-in-up">
-                <span className="inline-block">Empowering</span> <span className="inline-block text-wave">Brands</span>
+                <span className="inline-block">Building</span> <span className="inline-block text-wave">Tomorrow's</span>
                 <br />
                 <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent inline-block fade-in-rotate">
-                  Through Creative Solutions
+                  Digital Solutions Today
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg fade-in-up stagger-4">
-                From web development to branding, we transform ideas into impactful digital experiences 
-                that drive growth and deliver exceptional results.
+                A passionate startup transforming innovative ideas into powerful digital experiences 
+                that help businesses grow and succeed in the modern world.
               </p>
             </div>
 

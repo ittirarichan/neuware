@@ -1,13 +1,24 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SplashScreen from "@/components/SplashScreen";
 
 const Index = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
+
+  if (showSplash) {
+    return <SplashScreen onComplete={handleSplashComplete} />;
+  }
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -15,7 +26,6 @@ const Index = () => {
         <section id="home">
           <Hero />
         </section>
-        <Stats />
         <section id="about">
           <About />
         </section>

@@ -19,10 +19,10 @@ All colors MUST be HSL.
     --popover-foreground: 0 0% 95%;
 
     /* NeuWare Brand Colors */
-    --primary: 227 72% 43%; /* #1e39bc */
+    --primary: 246 58% 53%; /* #4E42C8 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 227 72% 53%;
-    --primary-muted: 227 72% 15%;
+    --primary-glow: 246 58% 63%;
+    --primary-muted: 246 58% 20%;
 
     --secondary: 225 25% 15%;
     --secondary-foreground: 0 0% 95%;
@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --muted: 225 25% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 227 72% 43%;
+    --accent: 246 58% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,17 +38,17 @@ All colors MUST be HSL.
 
     --border: 225 25% 20%;
     --input: 225 25% 20%;
-    --ring: 227 72% 43%;
+    --ring: 246 58% 53%;
 
     /* Custom Design Tokens */
     --tech-dark: 225 25% 8%;
     --tech-darker: 225 25% 5%;
     --tech-light: 0 0% 100%;
     --tech-light-foreground: 225 25% 8%;
-    --tech-gradient: linear-gradient(135deg, hsl(227 72% 43%), hsl(227 72% 53%));
+    --tech-gradient: linear-gradient(135deg, hsl(246 58% 53%), hsl(246 58% 63%));
     --tech-gradient-subtle: linear-gradient(180deg, hsl(225 25% 8%), hsl(225 25% 12%));
     --tech-shadow: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --tech-shadow-glow: 0 0 40px hsl(227 72% 53% / 0.4);
+    --tech-shadow-glow: 0 0 40px hsl(246 58% 53% / 0.4);
     --tech-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
@@ -383,6 +383,77 @@ All colors MUST be HSL.
     50% { 
       box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 
                   0 0 60px hsl(var(--primary) / 0.4);
+    }
+  }
+
+  /* Enhanced Splash Screen Animations */
+  .splash-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .splash-pulse-ring {
+    animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+
+  @keyframes pulseRing {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    80%, 100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  .splash-float-up {
+    animation: floatUp 3s ease-out infinite;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+  }
+
+  /* Responsive Splash Adjustments */
+  @media (max-width: 640px) {
+    .splash-container {
+      padding: 1rem;
+    }
+    
+    .splash-logo {
+      width: 4rem;
+      height: 4rem;
+    }
+    
+    .splash-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .splash-logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+    
+    .splash-title {
+      font-size: 1.75rem;
     }
   }
 }

@@ -6,52 +6,9 @@ const About = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 fade-in-left">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-tech-light-foreground">
-                Turning Ideas Into
-                <br />
-                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                  Masterpieces
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We bring our passion from tech innovation and the creative services 
-                we provide today. Guiding brands to connect their goals and provide 
-                outstanding solutions to support their organization.
-              </p>
-            </div>
 
-            {/* Features List */}
-            <div className="space-y-4">
-              {[
-                "Custom software solutions tailored to your needs",
-                "Cutting-edge technology stack and frameworks",
-                "Agile development process with regular updates",
-                "24/7 support and maintenance services"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Stats */}
-            <div className="flex space-x-8">
-              <div>
-                <div className="text-3xl font-bold text-primary">98%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-gray-600">Team Members</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Images */}
+          
+          {/* Left Images */}
           <div className="space-y-6 fade-in-right">
             <div className="relative rounded-2xl overflow-hidden tech-shadow hover-lift">
               <img 
@@ -72,6 +29,51 @@ const About = () => {
                   <div className="font-semibold text-tech-light-foreground">A CREATIVE DESIGN</div>
                   <div className="text-primary font-bold">AGENCY</div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className="space-y-8 fade-in-left">
+            <div className="space-y-4">
+              <h2 className="text-4xl lg:text-5xl font-bold text-tech-light-foreground">
+                Fresh Ideas Meet
+                <br />
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                  Proven Results
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                As an emerging tech startup, we bring fresh perspectives and cutting-edge 
+                solutions to help businesses navigate the digital landscape. Our agile approach 
+                ensures rapid delivery without compromising quality.
+              </p>
+            </div>
+
+            {/* Features List */}
+            <div className="space-y-4">
+              {[
+                "Modern tech stack with latest frameworks",
+                "Agile development with quick iterations",
+                "Cost-effective solutions for growing businesses",
+                "Dedicated support from our passionate team"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="flex space-x-8">
+              <div>
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-gray-600">Commitment</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-primary">5+</div>
+                <div className="text-gray-600">Team Members</div>
               </div>
             </div>
           </div>
