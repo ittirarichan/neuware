@@ -30,7 +30,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16 fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-white bounce-in">
-            Our <span className="text-primary text-wave">Services</span>
+            Our <span className="text-primary">Services</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto fade-in-scale stagger-2">
             We offer a range of creative and digital services designed to help 

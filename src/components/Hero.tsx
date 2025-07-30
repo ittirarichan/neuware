@@ -15,16 +15,16 @@ const Hero = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary/30 rounded-full float-delayed stagger-6"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 lg:py-32">
+      <div className="container mx-auto px-6 py-20 lg:py-32 mt-20 md:mt-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 fade-in-left">
             {/* Main Heading */}
             <div className="space-y-4 stagger-3">
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight fade-in-up">
-                <span className="inline-block">Building</span> <span className="inline-block text-wave">Tomorrow's</span>
+                <span className="inline-block">Building</span> <span className="inline-block">Tomorrow's</span>
                 <br />
-                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent inline-block fade-in-rotate">
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent inline-block">
                   Digital Solutions Today
                 </span>
               </h1>
@@ -53,15 +53,15 @@ const Hero = () => {
               <img 
                 src={heroImage} 
                 alt="Professional developer working" 
-                className="w-full h-[600px] object-cover hover-scale"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover hover-scale"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
             </div>
             
             {/* Floating stats card */}
-            <div className="absolute bottom-8 left-8 bg-card/95 backdrop-blur-sm rounded-xl p-4 tech-shadow hover-glow">
-              <div className="text-2xl font-bold text-primary">2000+</div>
-              <div className="text-sm text-muted-foreground">Happy Clients</div>
+            <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 bg-card/95 backdrop-blur-sm rounded-xl p-3 sm:p-4 tech-shadow hover-glow">
+              <div className="text-xl sm:text-2xl font-bold text-primary">2000+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Happy Clients</div>
             </div>
           </div>
         </div>

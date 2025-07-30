@@ -47,7 +47,7 @@ const Portfolio = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16 fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-tech-light-foreground bounce-in">
-            Our Recent <span className="text-primary text-wave">Projects</span>
+            Our Recent <span className="text-primary">Projects</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto fade-in-scale stagger-2">
             Explore our portfolio of innovative digital solutions that have helped 

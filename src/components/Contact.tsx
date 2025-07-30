@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -9,7 +9,7 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Content */}
-          <div className="space-y-8 fade-in-left">
+          <div className="space-y-8 fade-in-left mt-12">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-white">
                 Get In Touch
@@ -51,6 +51,16 @@ const Contact = () => {
                 <div>
                   <div className="font-semibold text-white">Visit Us</div>
                   <div className="text-gray-400">123 Tech Street, Innovation City</div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 tech-gradient rounded-lg flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white">Working Hours</div>
+                  <div className="text-gray-400">Monday - Friday: 9:00 AM - 5:00 PM</div>
+                  <div className="text-gray-400">Saturday - Sunday: 10:00 AM - 3:00 PM</div>
                 </div>
               </div>
             </div>

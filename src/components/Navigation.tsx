@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
@@ -17,7 +18,6 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
     { href: '#portfolio', label: 'Portfolio' },
@@ -34,13 +34,18 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed z-50 transition-all duration-300 mx-auto mt-4 left-0 right-0 
-        w-[99%] sm:w-[99%] md:w-[98%] lg:w-[96%] xl:w-[94%] 2xl:w-[92%]
-        rounded-xl border-b border-white/10 ${
-        isScrolled 
-          ? 'bg-background/90 backdrop-blur-sm shadow-lg' 
-          : 'bg-background/70 backdrop-blur-sm'
-      }`}>
+      <motion.nav 
+        initial={{ y: 0 }}
+        animate={{ y: isScrolled ? -12 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed z-50 transition-all duration-300 mx-auto mt-4 left-0 right-0 
+          w-[95%] sm:w-[99%] md:w-[98%] lg:w-[96%] xl:w-[94%] 2xl:w-[92%]
+          rounded-xl border-b border-white/10 ${
+          isScrolled 
+            ? 'bg-background/95 backdrop-blur-md shadow-xl transform -translate-y-1' 
+            : 'bg-background/70 backdrop-blur-sm'
+        }`}
+      >
         <div className="mx-auto px-3 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -54,19 +59,34 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            <div className="hidden md:flex items-center justify-center flex-1 space-x-6 lg:space-x-8">
               {navLinks.map((link) => (
-                <a 
+                <motion.div
                   key={link.href}
-                  href={link.href} 
-                  className="relative py-2 text-sm lg:text-base transition-colors text-muted-foreground hover:text-primary"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative"
                 >
-                  {link.label}
-                </a>
+                  <a 
+                    href={link.href} 
+                    className="relative py-2 text-sm lg:text-base transition-colors text-muted-foreground hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </motion.div>
               ))}
-              <Button variant="default" size="sm">
-                Get Started
-              </Button>
+            </div>
+
+            {/* Get Started Button */}
+            <div className="hidden md:flex">
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button variant="default" size="sm">
+                  Get Started
+                </Button>
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -105,7 +125,7 @@ const Navigation = () => {
             </div>
           )}
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 };

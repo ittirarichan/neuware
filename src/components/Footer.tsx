@@ -1,4 +1,5 @@
 import { Code, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,11 +8,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 tech-gradient rounded-lg flex items-center justify-center">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-white">NeuWare</span>
+          <div className="flex items-center space-x-2">
+              <img 
+                src={logo} 
+                alt="NeuWare Logo" 
+                className="h-7 sm:h-8 w-auto"
+              />
+              <span className="text-xl font-bold text-foreground">NeuWare</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               A passionate startup building innovative digital solutions for tomorrow's challenges.

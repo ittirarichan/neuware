@@ -431,22 +431,11 @@ All colors MUST be HSL.
   }
 
   /* Responsive Splash Adjustments */
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .splash-container {
-      padding: 1rem;
+      padding: 0.75rem;
     }
     
-    .splash-logo {
-      width: 4rem;
-      height: 4rem;
-    }
-    
-    .splash-title {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
     .splash-logo {
       width: 3.5rem;
       height: 3.5rem;
@@ -454,6 +443,76 @@ All colors MUST be HSL.
     
     .splash-title {
       font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .splash-container {
+      padding: 0.5rem;
+    }
+    
+    .splash-logo {
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    .splash-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .splash-logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+    .splash-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Mobile-first responsive utilities */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .grid {
+      gap: 1rem;
+    }
+    
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
+    
+    .text-5xl {
+      font-size: 2.5rem;
+    }
+    
+    .text-6xl {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .text-5xl {
+      font-size: 2rem;
+    }
+    
+    .text-6xl {
+      font-size: 2.25rem;
+    }
+    
+    .py-20 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    
+    .py-32 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -471,11 +530,11 @@ All colors MUST be HSL.
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border: solid 2px var(--loader-color);
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 8px;
     background-color: transparent;
     animation: circle-keys var(--loader-animation);
   }
@@ -485,8 +544,8 @@ All colors MUST be HSL.
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: var(--loader-color);
     animation: dot-keys var(--loader-animation);
@@ -497,8 +556,8 @@ All colors MUST be HSL.
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     border: 0px solid var(--loader-color);
     animation: outline-keys var(--loader-animation);
