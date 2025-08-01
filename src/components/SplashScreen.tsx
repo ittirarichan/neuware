@@ -107,8 +107,6 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
                   <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#c)" d="M 8,8 L 20,56 L 32,24 L 44,56 L 56,8" className="dash" pathLength={360} />
                 </svg>
                 
-                <div className="w-2" />
-                
                 {/* A */}
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
                   <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#b)" d="M 8,56 L 32,8 L 56,56 M 16,40 L 48,40" className="dash" pathLength={360} />
@@ -157,6 +155,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 };
 
 export default SplashScreen;
+
 
 
 
