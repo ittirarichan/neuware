@@ -57,45 +57,73 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
               <img 
                 src={logo} 
                 alt="NeuWare" 
-                className="w-16 h-20 "
+                className="w-16 h-20"
               />
             </motion.div>
 
-            {/* Loader */}
+            {/* NEUWARE Loader */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-8"
             >
-              <div className="splash-loader">
-                <div className="circle">
-                  <div className="dot" />
-                  <div className="outline" />
-                </div>
-                <div className="circle">
-                  <div className="dot" />
-                  <div className="outline" />
-                </div>
-                <div className="circle">
-                  <div className="dot" />
-                  <div className="outline" />
-                </div>
-                <div className="circle">
-                  <div className="dot" />
-                  <div className="outline" />
-                </div>
+              <div className="neuware-loader">
+                <svg height={0} width={0} viewBox="0 0 64 64" className="absolute">
+                  <defs xmlns="http://www.w3.org/2000/svg">
+                    <linearGradient gradientUnits="userSpaceOnUse" y2={2} x2={0} y1={62} x1={0} id="b">
+                      <stop stopColor="#973BED" />
+                      <stop stopColor="#007CFF" offset={1} />
+                    </linearGradient>
+                    <linearGradient gradientUnits="userSpaceOnUse" y2={0} x2={0} y1={64} x1={0} id="c">
+                      <stop stopColor="#FFC800" />
+                      <stop stopColor="#F0F" offset={1} />
+                      <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform" />
+                    </linearGradient>
+                    <linearGradient gradientUnits="userSpaceOnUse" y2={2} x2={0} y1={62} x1={0} id="d">
+                      <stop stopColor="#00E0ED" />
+                      <stop stopColor="#00DA72" offset={1} />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                
+                {/* N */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#b)" d="M 8,8 V 56 M 8,8 L 56,56 M 56,8 V 56" className="dash" pathLength={360} />
+                </svg>
+                
+                {/* E */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#c)" d="M 8,8 V 56 M 8,8 H 48 M 8,32 H 40 M 8,56 H 48" className="dash" pathLength={360} />
+                </svg>
+                
+                {/* U */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#d)" d="M 8,8 V 40 C 8,48.837 15.163,56 24,56 H 40 C 48.837,56 56,48.837 56,40 V 8" className="dash" pathLength={360} />
+                </svg>
+                
+                {/* W */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#c)" d="M 8,8 L 20,56 L 32,24 L 44,56 L 56,8" className="dash" pathLength={360} />
+                </svg>
+                
+                <div className="w-2" />
+                
+                {/* A */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#b)" d="M 8,56 L 32,8 L 56,56 M 16,40 L 48,40" className="dash" pathLength={360} />
+                </svg>
+                
+                {/* R */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#c)" d="M 8,8 V 56 M 8,8 H 40 C 48.837,8 56,15.163 56,24 C 56,32.837 48.837,40 40,40 H 8 M 32,40 L 56,56" className="dash" pathLength={360} />
+                </svg>
+                
+                {/* E */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height={64} width={64} className="inline-block">
+                  <path strokeLinejoin="round" strokeLinecap="round" strokeWidth={8} stroke="url(#d)" d="M 8,8 V 56 M 8,8 H 48 M 8,32 H 40 M 8,56 H 48" className="dash" pathLength={360} />
+                </svg>
               </div>
-            </motion.div>
-
-            {/* Progress indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.4 }}
-              className="w-48"
-            >
-            
             </motion.div>
           </div>
 
@@ -129,5 +157,9 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 };
 
 export default SplashScreen;
+
+
+
+
 
 
