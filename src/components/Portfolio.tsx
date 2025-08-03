@@ -1,25 +1,28 @@
 import { ExternalLink, Github } from "lucide-react";
 import techAbstract from "@/assets/tech-abstract.jpg";
+import greenvilla from "@/assets/greenvilla.png";
+import asseton from "@/assets/asseton.png";
+import panchali from "@/assets/panchali.png";
 
 const Portfolio = () => {
   const projects = [
     {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with payment integration",
-      image: techAbstract,
-      tags: ["React", "Node.js", "MongoDB"]
+      image: panchali,
+      tags: ["React", "Python", "MySQL"]
     },
     {
-      title: "Healthcare App",
-      description: "Mobile health monitoring application with real-time data",
-      image: techAbstract,
-      tags: ["React Native", "Firebase", "ML"]
+      title: "Real Estate Management System",
+      description: "Real Estate Management System with payment integration",
+      image: asseton,
+      tags: ["React", "Python", "MySQL"]
     },
     {
-      title: "FinTech Dashboard",
-      description: "Advanced analytics dashboard for financial institutions",
-      image: techAbstract,
-      tags: ["Vue.js", "Python", "PostgreSQL"]
+      title: "Property Management System",
+      description: "Property Management System with payment integration",
+      image: greenvilla,
+      tags: ["React", "Python", "MySQL"]
     },
     {
       title: "AI Chat Platform",
@@ -72,14 +75,14 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 tech-transition"></div>
                 
                 {/* Hover Actions */}
-                <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 tech-transition">
+                {/* <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 tech-transition">
                   <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 tech-transition bounce-in touch-feedback">
                     <ExternalLink className="w-5 h-5 text-white" />
                   </button>
                   <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 tech-transition bounce-in stagger-1 touch-feedback">
                     <Github className="w-5 h-5 text-white" />
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Project Info */}

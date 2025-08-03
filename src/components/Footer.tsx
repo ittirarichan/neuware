@@ -1,5 +1,6 @@
 import { Code, Github, Twitter, Linkedin, Mail } from "lucide-react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -87,9 +88,15 @@ const Footer = () => {
                 "Privacy Policy"
               ].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-primary tech-transition">
-                    {item}
-                  </a>
+                  {item === "Privacy Policy" ? (
+                    <Link to="/privacy-policy" className="text-gray-400 hover:text-primary tech-transition">
+                      {item}
+                    </Link>
+                  ) : (
+                    <a href="#" className="text-gray-400 hover:text-primary tech-transition">
+                      {item}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -100,16 +107,16 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400">
-              © 2024 NeuWare. All rights reserved.
+              © 2025 NeuWare. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-primary tech-transition text-sm">
+              <a href="/terms-of-service" className="text-gray-400 hover:text-primary tech-transition text-sm">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary tech-transition text-sm">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-primary tech-transition text-sm">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary tech-transition text-sm">
+              </Link>
+              <a href="/cookie-policy" className="text-gray-400 hover:text-primary tech-transition text-sm">
                 Cookie Policy
               </a>
             </div>

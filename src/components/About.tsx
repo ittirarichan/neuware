@@ -6,35 +6,8 @@ const About = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          
-          {/* Left Images */}
-          <div className="space-y-6 fade-in-right">
-            <div className="relative rounded-2xl overflow-hidden tech-shadow hover-lift">
-              <img 
-                src={teamImage} 
-                alt="Team collaboration" 
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
-            </div>
-            
-            {/* Creative badge */}
-            <div className="bg-primary/10 rounded-2xl p-6 hover-glow">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 tech-gradient rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="font-semibold text-tech-light-foreground">A CREATIVE DESIGN</div>
-                  <div className="text-primary font-bold">AGENCY</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content */}
-          <div className="space-y-8 fade-in-left">
+          {/* Right Content - Now first on mobile */}
+          <div className="space-y-8 fade-in-left lg:order-2">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-tech-light-foreground">
                 Fresh Ideas Meet
@@ -48,6 +21,31 @@ const About = () => {
                 solutions to help businesses navigate the digital landscape. Our agile approach 
                 ensures rapid delivery without compromising quality.
               </p>
+            </div>
+
+            {/* Mobile Image Section - Shows after paragraph on mobile */}
+            <div className="lg:hidden space-y-6">
+              <div className="relative rounded-2xl overflow-hidden tech-shadow hover-lift">
+                <img 
+                  src={teamImage} 
+                  alt="Team collaboration" 
+                  className="w-full h-64 sm:h-80 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+              </div>
+              
+              {/* Creative badge */}
+              <div className="bg-primary/10 rounded-2xl p-6 hover-glow">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 tech-gradient rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-tech-light-foreground">A CREATIVE DESIGN</div>
+                    <div className="text-primary font-bold">AGENCY</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Features List */}
@@ -74,6 +72,31 @@ const About = () => {
               <div>
                 <div className="text-3xl font-bold text-primary">5+</div>
                 <div className="text-gray-600">Team Members</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Left Images - Hidden on mobile, shows on desktop */}
+          <div className="hidden lg:block space-y-6 fade-in-right lg:order-1">
+            <div className="relative rounded-2xl overflow-hidden tech-shadow hover-lift">
+              <img 
+                src={teamImage} 
+                alt="Team collaboration" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+            </div>
+            
+            {/* Creative badge */}
+            <div className="bg-primary/10 rounded-2xl p-6 hover-glow">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 tech-gradient rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="font-semibold text-tech-light-foreground">A CREATIVE DESIGN</div>
+                  <div className="text-primary font-bold">AGENCY</div>
+                </div>
               </div>
             </div>
           </div>
