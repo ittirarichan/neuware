@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { X, Mail, Phone, User, MessageSquare, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const EnquiryPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,18 +34,40 @@ const EnquiryPopup = () => {
     setIsVisible(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Thank you for your enquiry!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setIsVisible(false);
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        message: formData.message,
+        to_name: 'NeuWare Team',
+        reply_to: formData.email,
+      };
+
+      await emailjs.send(
+        'service_txgz8xr', // Replace with your EmailJS service ID
+        'template_rder6wi', // Replace with your template ID
+        templateParams,
+        '1kfs8_hIUZlXcCvux' // Replace with your EmailJS public key
+      );
+
+      toast({
+        title: "Thank you for your enquiry!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setIsVisible(false);
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

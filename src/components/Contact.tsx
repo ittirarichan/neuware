@@ -2,8 +2,71 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    projectType: "Mobile App Development",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        project_type: formData.projectType,
+        message: formData.message,
+        to_name: 'NeuWare Team',
+        reply_to: formData.email,
+      };
+
+      await emailjs.send(
+        'service_txgz8xr', // Replace with your EmailJS service ID
+        'template_50bhkfd', // Replace with your template ID
+        templateParams,
+        '1kfs8_hIUZlXcCvux' // Replace with your EmailJS public key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        projectType: "Mobile App Development",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -68,26 +131,53 @@ const Contact = () => {
 
           {/* Right Form */}
           <div className="fade-in-right">
-            <form className="space-y-6 bg-card rounded-2xl p-8 tech-shadow hover-glow">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-card rounded-2xl p-8 tech-shadow hover-glow">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-card-foreground">First Name</label>
-                  <Input placeholder="John" className="border-border focus:border-primary bg-background text-foreground" />
+                  <Input 
+                    name="firstName"
+                    placeholder="John" 
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="border-border focus:border-primary bg-background text-foreground" 
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-card-foreground">Last Name</label>
-                  <Input placeholder="Doe" className="border-border focus:border-primary bg-background text-foreground" />
+                  <Input 
+                    name="lastName"
+                    placeholder="Doe" 
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="border-border focus:border-primary bg-background text-foreground" 
+                    required
+                  />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium text-card-foreground">Email</label>
-                <Input type="email" placeholder="john@example.com" className="border-border focus:border-primary bg-background text-foreground" />
+                <Input 
+                  name="email"
+                  type="email" 
+                  placeholder="john@example.com" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="border-border focus:border-primary bg-background text-foreground" 
+                  required
+                />
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium text-card-foreground">Project Type</label>
-                <select className="w-full px-3 py-2 border border-border rounded-md focus:border-primary focus:outline-none bg-background text-foreground">
+                <select 
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-border rounded-md focus:border-primary focus:outline-none bg-background text-foreground"
+                >
                   <option>Mobile App Development</option>
                   <option>Web Application</option>
                   <option>UI/UX Design</option>
@@ -99,13 +189,23 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-card-foreground">Message</label>
                 <Textarea 
+                  name="message"
                   placeholder="Tell us about your project..." 
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="border-border focus:border-primary min-h-[120px] bg-background text-foreground"
+                  required
                 />
               </div>
               
-              <Button variant="hero" size="lg" className="w-full group">
-                Send Message
+              <Button 
+                type="submit"
+                variant="hero" 
+                size="lg" 
+                className="w-full group"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
